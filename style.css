@@ -1,0 +1,145 @@
+@import url('/css/reset.css');
+
+/* base styles */
+
+:root{
+  --clr-primary-400:hsl(215, 51%, 70%);
+  --clr-secondary-200:hsl(178,100%,50%);
+
+  --neutral-900:hsl(217,54%,11%);
+  --neutral-400:hsl(216,50%, 16%);
+  --neutral-200:hsl(215,32%,27%);
+  --neutral-100:hsl(0,0%,100%);
+  
+  --fw-light:300;
+  --fw-regular:400;
+  --fw-bold:600;
+  
+  --ff-regular:'Outfit', sans-serif;
+
+}
+
+/* general styling */
+
+body {
+  font-family: var(--ff-regular);
+  font-weight: var(--fw-regular);
+  font-size:1.125rem;
+  color:var(--clr-primary-400);
+  background-color: var(--neutral-900);
+
+  display: grid;
+  place-content: center;
+  margin:1rem;
+
+}
+
+/* utilities */
+.flex-group{
+  display:flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  gap:.5rem;
+}
+
+/* nft sytles */
+.nft {
+  --nft-padding:1rem;
+  --nft-border-radius:.5rem;
+  --nft-display:grid;
+
+  background-color:var(--neutral-400);
+  border-radius: var(--nft-border-radius);
+  padding: 1.5rem;
+  display: var(--nft-display);
+  gap:1.5rem;
+  min-width: 375px;
+  max-width: 375px;
+
+}
+
+.nft__image {
+  border-radius: var(--nft-border-radius);
+  overflow: hidden;
+  height: 327px;
+  width: 327px;
+  
+}
+
+.nft__views {
+  display: grid;
+  place-content: center;
+  border-radius: var(--nft-border-radius);
+  height: inherit;
+  width: inherit;
+  transition: .3s ease;
+  opacity: 0;
+  position: absolute;
+  top: 38.7%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+}
+
+.nft__image:hover .nft__headimage{
+  opacity: 0.5;
+}
+
+.nft__image:hover .nft__views{
+  opacity: .5;
+  background-color: var(--clr-secondary-200);
+  cursor: pointer;
+
+}
+
+.nft__content {
+  display:var(--nft-display);
+  gap:1rem;
+
+}
+
+.nft__title {
+  color:var(--neutral-100);
+}
+
+
+.nft__price {
+  color:var(--clr-secondary-200)
+}
+
+.nft__styleline{
+  border: .01rem solid var(--clr-primary-400);
+  border-color: var(--neutral-200);
+}
+
+.nft__creator{
+  display:flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap:1rem;
+}
+
+.nft__avatar{
+  height: 2rem;
+  border: .1rem solid var(--neutral-100);
+  border-radius: 1rem;
+}
+
+.nft__name{
+  color:var(--neutral-100)
+}
+
+
+
+.nft__title:is(:hover, :focus) {
+  color: var(--clr-secondary-200);
+  cursor: pointer;
+}
+
+.nft__name:is(:hover, :focus) {
+  color: var(--clr-secondary-200);
+  cursor: pointer;
+}
+
+
